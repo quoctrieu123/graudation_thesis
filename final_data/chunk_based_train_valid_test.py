@@ -65,7 +65,7 @@ def process_chunk_based_split():
     train_list = []
     valid_list = []
     test_list = []
-    num_chunks = 10
+    num_chunks = 3
 
     # 1. Đọc các file và chia 10 khối
     for link in processed_links:
@@ -160,7 +160,7 @@ def process_chunk_based_split():
         test_df["label"] = safe_transform_labels(test_df["label"])
 
     # 9. Lưu vào folder chunk-based-split theo định dạng .parquet
-    save_folder = os.path.join("final_data", "chunk-based-split")
+    save_folder = os.path.join("final_data", "chunk-based-split-3")
     os.makedirs(save_folder, exist_ok=True)
     
     print("--- Đang lưu DataFrames sang định dạng Parquet... ---")
